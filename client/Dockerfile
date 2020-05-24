@@ -4,4 +4,4 @@ RUN apk add nginx
 
 WORKDIR /app
 
-CMD ["npm", "start"]
+CMD nginx && npm start
