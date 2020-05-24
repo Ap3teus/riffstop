@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  client:
+    build:
+      context: ./client
+    container_name: "riffstop-client"
+    volumes:
+      - ./client/src/:/app/src
+      - ./:/app/
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+      - "1234:1234"
+      - "8080:8080"
+    tty: true
+  functions:
+    build:
+      context: ./functions
+    container_name: "riffstop-functions"
+    volumes:
+      - ./functions/src/:/app/src
+      - ./:/app/
+    ports:
+      - "9000:9000"
+    tty: true
