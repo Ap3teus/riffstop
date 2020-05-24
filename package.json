@@ -7,7 +7,7 @@
     "start": "parcel ./src/index.html --hmr-port 8080",
     "build": "parcel build ./client/src/index.html && netlify-lambda build ./functions/src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tsc --noemit"
+    "lint": "tsc --noemit && eslint ."
   },
   "keywords": [],
   "author": "",
