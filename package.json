@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html --hmr-port 8080",
-    "start:functions": "ls && netlify-lambda serve -c ./functions/webpack.config ./src",
+    "start:functions": "netlify-lambda serve -c ./webpack.config ./src",
     "build": "parcel build ./client/src/index.html && netlify-lambda build ./functions/src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc --noemit && eslint .",
