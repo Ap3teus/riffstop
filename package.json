@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel ./src/index.html --hmr-port 8080",
     "start:functions": "netlify-lambda serve -c ./webpack.config ./src",
-    "build": "parcel build ./client/src/index.html && netlify-lambda build ./functions/src",
+    "build": "parcel build ./client/src/index.html && netlify-lambda build -c ./webpack.config ./functions/src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc --noemit && eslint .",
     "db": "docker-compose exec database ./sqitch.sh dev",
