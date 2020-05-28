@@ -1,5 +1,4 @@
 import * as pg from 'pg-promise';
-import * as secrets from './secrets.json';
 
 const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB } = process.env;
 
