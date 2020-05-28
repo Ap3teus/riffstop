@@ -4,3 +4,4 @@ node_modules
 dist
 .cache
 secrets.env
+secrets.json

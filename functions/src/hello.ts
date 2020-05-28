@@ -1,8 +1,11 @@
 import { Handler } from 'aws-lambda';
+import { db } from './common/db';
 
-export const handler: Handler = (event, context, callback) => {
+export const handler: Handler = async (event, context, callback) => {
+  const res = await db.any(`select * from foo;`);
+
   callback(null, {
     statusCode: 200,
-    body: 'Hello, Worlds',
+    body: Object.keys(res).join(', '),
   });
 };

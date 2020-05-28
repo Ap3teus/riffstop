@@ -17,6 +17,10 @@ services:
     build:
       context: ./functions
     container_name: "riffstop-functions"
+    env_file:
+      - ./secrets.env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
     volumes:
       - ./functions/src/:/app/src
       - ./:/app/
