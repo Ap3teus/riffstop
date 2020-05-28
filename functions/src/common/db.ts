@@ -10,9 +10,7 @@ export const db = pgp(
         user: POSTGRES_USER,
         password: POSTGRES_PASSWORD,
         database: POSTGRES_DB,
-        host: 'localhost',
+        host: 'database',
       }
     : process.env.PROD_DB ?? '',
 );
-
-console.log(db.$cn);
