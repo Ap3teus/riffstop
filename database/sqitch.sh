@@ -13,7 +13,7 @@ DB="db:pg:$POSTGRES_DB"
 
 if [ "$ENV" = "prod" ]
 then
-  DB=$PROD_DB
+  DB="db:pg://$PROD_DB"
   read -p "Are you sure? [y/N]: "  -r
   if [[ $REPLY =~ ^[Yy]$ ]]
   then

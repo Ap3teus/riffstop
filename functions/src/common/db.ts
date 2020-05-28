@@ -1,15 +1,6 @@
 import * as pg from 'pg-promise';
 
-const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB } = process.env;
+const { POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, PROD_DB } = process.env;
 
 const pgp = pg();
-export const db = pgp(
-  POSTGRES_USER
-    ? {
-        user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD,
-        database: POSTGRES_DB,
-        host: 'database',
-      }
-    : process.env.PROD_DB ?? '',
-);
+export const db = pgp(`postgresql://${PROD_DB}` ?? '');
