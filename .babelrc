@@ -1,7 +1,16 @@
 {
   "presets": [
-    "@babel/preset-typescript",
+    [
+      "@babel/preset-typescript",
+      {
+        "targets": {
+          "node": "10"
+        }
+      }
+    ],
     "@babel/preset-env"
   ],
-  "plugins": []
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
 }

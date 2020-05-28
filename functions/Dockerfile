@@ -2,4 +2,6 @@ FROM node:alpine
 
 WORKDIR /app
 
-CMD ["npx", "netlify-lambda", "serve", "./src"]
+COPY ./webpack.config.js .
+
+CMD ["npm", "run", "start:functions"]

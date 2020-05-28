@@ -9,7 +9,8 @@
     "jsx": "react",
     "jsxFactory": "h",
     "strictNullChecks": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "include": [
     "./client/src/**/*",

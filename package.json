@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html --hmr-port 8080",
-    "build": "parcel build ./client/src/index.html && netlify-lambda build ./functions/src",
+    "start:functions": "netlify-lambda serve -c ./webpack.config ./src",
+    "build": "parcel build ./client/src/index.html && netlify-lambda build -c ./webpack.config ./functions/src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tsc --noemit && eslint ."
+    "lint": "tsc --noemit && eslint .",
+    "db": "docker-compose exec database ./sqitch.sh dev",
+    "db:prod": "docker-compose exec database ./sqitch.sh prod"
   },
   "husky": {
     "hooks": {
@@ -36,9 +39,15 @@
     "typescript": "^3.9.2"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/runtime": "^7.10.1",
     "@types/aws-lambda": "^8.10.51",
+    "@types/pg-promise": "^5.4.3",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "node-postgres": "^0.6.0",
+    "pg-promise": "^10.5.6",
     "preact": "^10.4.1",
     "preact-compat": "^3.19.0",
     "preact-dom": "^1.0.1",

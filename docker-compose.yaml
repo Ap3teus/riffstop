@@ -17,9 +17,28 @@ services:
     build:
       context: ./functions
     container_name: "riffstop-functions"
+    env_file:
+      - ./secrets.env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
     volumes:
       - ./functions/src/:/app/src
       - ./:/app/
     ports:
       - "9000:9000"
     tty: true
+  database:
+    container_name: "riffstop-database"
+    build: ./database
+    env_file:
+      - ./secrets.env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+      - ./database/:/app/
+    ports:
+      - "5432:5432"
+
+volumes:
+  database-data:
