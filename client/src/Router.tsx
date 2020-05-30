@@ -1,18 +1,18 @@
 import { h } from 'preact';
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import FrontPage from './pages/frontpage';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import Navigation from './pages/Navigation';
 
 const AppRouter = () => (
   <Router>
-    <Page>
-      <Switch>
-        <Route path="/foo">{/* <Foo /> */}</Route>
-        <Route path="/">
-          <FrontPage />
-        </Route>
-      </Switch>
-    </Page>
+    <Switch>
+      <Navigation />
+      <Route path="/foo">{/* <Foo /> */}</Route>
+      <Route path="/">
+        <FrontPage />
+      </Route>
+    </Switch>
   </Router>
 );
 
