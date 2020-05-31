@@ -2,16 +2,25 @@ import { h } from 'preact';
 import {
   LayoutProps,
   layout,
-  FlexProps,
-  flex,
   BackgroundProps,
   background,
   border,
   BorderProps,
+  margin,
+  MarginProps,
+  flexbox,
+  FlexboxProps,
+  GridProps,
+  grid,
 } from 'styled-system';
 import styled from 'styled-components';
 
-type ContainerProps = LayoutProps & FlexProps & BackgroundProps & BorderProps;
+export type ContainerProps = LayoutProps &
+  FlexboxProps &
+  BackgroundProps &
+  BorderProps &
+  MarginProps &
+  GridProps;
 
 const Container: React.FC<ContainerProps> = ({ children, ...props }) => (
   <Div {...props}>{children}</Div>
@@ -20,9 +29,11 @@ const Container: React.FC<ContainerProps> = ({ children, ...props }) => (
 const Div = styled.div<ContainerProps>`
   display: flex;
   ${layout}
-  ${flex}
+  ${flexbox}
   ${background}
   ${border}
+  ${margin}
+  ${grid}
 `;
 
 export default Container;

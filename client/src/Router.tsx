@@ -7,11 +7,12 @@ import Navigation from './pages/Navigation';
 const AppRouter = () => (
   <Router>
     <Switch>
-      <Navigation />
-      <Route path="/foo">{/* <Foo /> */}</Route>
-      <Route path="/">
-        <FrontPage />
-      </Route>
+      <Page>
+        <Route path="/foo">{/* <Foo /> */}</Route>
+        <Route path="/">
+          <FrontPage />
+        </Route>
+      </Page>
     </Switch>
   </Router>
 );
@@ -19,6 +20,7 @@ const AppRouter = () => (
 const Page = styled.div`
   position: absolute;
   width: 100%;
+  height: 100%;
 `;
 
 export default AppRouter;
