@@ -2,4 +2,4 @@
 %project=preact-template
 
 uuid 2020-05-20T16:59:06Z ape <ape> # Install uuid-module
-foo 2020-05-20T16:50:49Z ape <ape> # Add foos
+users 2020-05-31T19:41:50Z root <root@f1472ccc51a2> # Add users-table
