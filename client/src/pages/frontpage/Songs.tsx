@@ -9,19 +9,24 @@ const Songs = () => {
 };
 
 const Song = () => (
-  <Container
-    width="100%"
-    background={theme.colors.gray.primary()}
-    paddingY={2}
-    paddingX={4}
-  >
+  <SongContainer paddingY={2} paddingX={4}>
     <Container width="50%">
       <Link>Leevi and the Leavings</Link>
     </Container>
     <Container width="50%">
-      <Link>Raparperitaivas</Link>
+      <Body>Raparperitaivas</Body>
     </Container>
-  </Container>
+  </SongContainer>
 );
+
+export const SongContainer = styled(Container)`
+  width: 100%;
+  background: ${(props) => props.theme.colors.gray.primary()};
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.gray.primary(-1)};
+  }
+`;
 
 export default Songs;
