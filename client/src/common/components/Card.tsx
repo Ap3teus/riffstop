@@ -3,7 +3,7 @@ import { GridArea, Grid, GridAreaProps } from './Grid';
 import { h } from 'preact';
 import { theme } from '../theme';
 import Container from './Container';
-import { Spacing } from './Spacing';
+import Spacing from './Spacing';
 import { Heading } from './Typography';
 
 type CardProps = GridAreaProps & {

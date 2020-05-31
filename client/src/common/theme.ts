@@ -39,5 +39,8 @@ export const theme = {
     red: ['#ff0000'],
   },
   typography,
+  iconSizes: {
+    large: 42,
+  },
   spacing: (steps = 4) => 2 ** steps,
 };

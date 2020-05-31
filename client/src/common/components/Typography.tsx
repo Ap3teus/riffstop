@@ -6,8 +6,11 @@ import { h } from 'preact';
 
 const typographyComponentFactory: (
   style: TypographyStyle,
-) => React.FC<TypographyProps> = ({ tag }) => ({ children, ...props }) => (
-  <Element {...props} as={tag as any}>
+) => React.FC<TypographyProps> = ({ tag, ...style }) => ({
+  children,
+  ...props
+}) => (
+  <Element {...style} {...props} as={tag as any}>
     {children}
   </Element>
 );
