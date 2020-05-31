@@ -12,8 +12,6 @@ const typographyComponentFactory: (
   </Element>
 );
 
-console.log(theme.typography);
-
 export const Heading = typographyComponentFactory(theme.typography.heading);
 export const Body = typographyComponentFactory(theme.typography.body);
 

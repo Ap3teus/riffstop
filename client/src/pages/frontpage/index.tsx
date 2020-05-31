@@ -18,7 +18,7 @@ const FrontPage: React.FC = () => (
       <Card
         header={
           <Heading>
-            <Icon type="music" />
+            <Icon size={32} fill={theme.colors.white()} type="music" />
             My Songs
           </Heading>
         }

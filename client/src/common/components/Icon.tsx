@@ -13,8 +13,26 @@ const icons: Record<IconType, any> = {
 
 export const Icon = ({
   type,
+  fill,
+  size,
   ...props
-}: { type: IconType } & React.HTMLProps<HTMLImageElement>) => {
+}: { type: IconType; fill?: string; size?: number } & React.HTMLProps<
+  HTMLImageElement
+>) => {
   const Svg = icons[type];
-  return <Svg {...props} />;
+  const dimensions = size
+    ? {
+        width: size,
+        height: size,
+      }
+    : {};
+  return (
+    <Svg
+      preserveAspectRatio="xMinYMin meet"
+      viewBox={'0 0 24 24'}
+      {...dimensions}
+      fill={fill}
+      {...props}
+    />
+  );
 };
