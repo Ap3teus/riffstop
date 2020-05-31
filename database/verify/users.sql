@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add verifications here.
+SELECT * FROM account;
 
 ROLLBACK;

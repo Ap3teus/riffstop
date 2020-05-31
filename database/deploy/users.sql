@@ -2,7 +2,7 @@
 
 BEGIN;
 
-CREATE TABLE user (
+CREATE TABLE account (
   id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
   name TEXT,
   email TEXT,

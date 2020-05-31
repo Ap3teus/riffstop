@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE user;
+DROP TABLE account;
 
 COMMIT;
