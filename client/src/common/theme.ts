@@ -19,4 +19,5 @@ export const theme = {
     white: color('#CECCCC'),
     red: ['#ff0000'],
   },
+  spacing: (steps = 4) => 2 ** steps,
 };

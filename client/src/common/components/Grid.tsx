@@ -8,10 +8,12 @@ export const Grid: React.FC<
   } & ContainerProps
 > = ({ children, rows, columns, ...props }) => (
   <Container
-    {...props}
     display={'grid'}
+    width="100%"
+    height="100%"
     gridTemplateRows={rows.join(' ')}
     gridTemplateColumns={columns.join(' ')}
+    {...props}
   >
     {children}
   </Container>

@@ -12,6 +12,10 @@ import {
   FlexboxProps,
   GridProps,
   grid,
+  PaddingProps,
+  padding,
+  SpaceProps,
+  space,
 } from 'styled-system';
 import styled from 'styled-components';
 
@@ -20,7 +24,9 @@ export type ContainerProps = LayoutProps &
   BackgroundProps &
   BorderProps &
   MarginProps &
-  GridProps;
+  GridProps &
+  PaddingProps &
+  SpaceProps;
 
 const Container: React.FC<ContainerProps> = ({ children, ...props }) => (
   <Div {...props}>{children}</Div>
@@ -34,6 +40,8 @@ const Div = styled.div<ContainerProps>`
   ${border}
   ${margin}
   ${grid}
+  ${padding}
+  ${space}
 `;
 
 export default Container;
