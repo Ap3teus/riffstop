@@ -1,0 +1,3 @@
+FILE=$1
+
+psql $POSTGRES_DB -f $FILE

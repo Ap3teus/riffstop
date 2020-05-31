@@ -9,6 +9,10 @@
     "build": "parcel build ./client/src/index.html && netlify-lambda build -c ./webpack.config ./functions/src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc --noemit && eslint .",
+    "db-init": "npm run db -- deploy && npm run db-import -- ./data/dev.sql",
+    "db-init:prod": "npm run db -- deploy && npm run db-import -- ./data/prod.sql",
+    "db-import": "docker-compose exec database sh import.sh",
+    "db-connect": "docker-compose exec database sh connect.sh",
     "db": "docker-compose exec database ./sqitch.sh dev",
     "db:prod": "docker-compose exec database ./sqitch.sh prod"
   },

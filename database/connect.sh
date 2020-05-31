@@ -1,0 +1,1 @@
+psql $POSTGRES_DB
