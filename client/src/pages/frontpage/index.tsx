@@ -3,10 +3,11 @@ import { Grid, GridArea } from '../../common/components/Grid';
 import Card from '../../common/components/Card';
 import Container from '../../common/components/Container';
 import { theme } from '../../common/theme';
-import { Heading } from '../../common/components/Typography';
+import { Heading, Body } from '../../common/components/Typography';
 import Icon from '../../common/components/Icon';
 import Spacing from '../../common/components/Spacing';
 import CardHeader from '../../common/components/CardHeader';
+import Songs from './Songs';
 
 const FrontPage: React.FC = () => (
   <Container width="100%" height="100%">
@@ -18,7 +19,7 @@ const FrontPage: React.FC = () => (
       areas={['songs account', 'songs -']}
     >
       <Card header={<CardHeader title="My Songs" icon="music" />} area="songs">
-        asd
+        <Songs />
       </Card>
       <Card
         header={<CardHeader title="My Account" icon="account" />}
