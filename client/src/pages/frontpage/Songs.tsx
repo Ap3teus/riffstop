@@ -1,7 +1,8 @@
 import Container from '../../common/components/Container';
 import { h } from 'preact';
-import { Body } from '../../common/components/Typography';
+import { Body, Link } from '../../common/components/Typography';
 import { theme } from '../../common/theme';
+import styled from 'styled-components';
 
 const Songs = () => {
   return <Song />;
@@ -15,10 +16,10 @@ const Song = () => (
     paddingX={4}
   >
     <Container width="50%">
-      <Body>Leevi and the Leavings</Body>
+      <Link>Leevi and the Leavings</Link>
     </Container>
     <Container width="50%">
-      <Body>Raparperitaivas</Body>
+      <Link>Raparperitaivas</Link>
     </Container>
   </Container>
 );
