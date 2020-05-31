@@ -1,10 +1,29 @@
 import * as d3 from 'd3-color';
+import { TypographyProps } from 'styled-system';
 
 const color = (hex: string) => (steps = 0) =>
   d3
     .color(hex)
     ?.brighter(steps / 2)
     .hex() ?? hex;
+
+export type TypographyStyle = TypographyProps & {
+  tag: keyof JSX.IntrinsicElements;
+};
+
+type Typography = 'heading' | 'body';
+
+const typography: Record<Typography, TypographyStyle> = {
+  heading: {
+    tag: 'h1',
+    fontSize: 36,
+    fontWeight: 'bold',
+  },
+  body: {
+    tag: 'span',
+    fontSize: 24,
+  },
+};
 
 export const theme = {
   colors: {
@@ -19,5 +38,6 @@ export const theme = {
     white: color('#CECCCC'),
     red: ['#ff0000'],
   },
+  typography,
   spacing: (steps = 4) => 2 ** steps,
 };
