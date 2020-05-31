@@ -10,14 +10,11 @@ const FrontPage: React.FC = () => (
       gridGap={theme.spacing(6)}
       padding={theme.spacing(6)}
       columns={['2fr', '1fr']}
-      rows={['1fr', '2fr']}
+      rows={['1fr', '1fr']}
+      areas={['songs account', 'songs -']}
     >
-      <Card column={'1'} row={'1'}>
-        asd
-      </Card>
-      <Card column={'2'} row={'1'}>
-        asd
-      </Card>
+      <Card area="songs">asd</Card>
+      <Card area="account">asd</Card>
     </Grid>
   </Container>
 );

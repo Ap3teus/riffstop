@@ -5,27 +5,34 @@ export const Grid: React.FC<
   {
     columns: string[];
     rows: string[];
+    areas?: string[];
   } & ContainerProps
-> = ({ children, rows, columns, ...props }) => (
+> = ({ children, rows, columns, areas, ...props }) => (
   <Container
     display={'grid'}
     width="100%"
-    height="100%"
     gridTemplateRows={rows.join(' ')}
     gridTemplateColumns={columns.join(' ')}
+    gridTemplateAreas={areas && areas.map((area) => `'${area}'`).join(' ')}
     {...props}
   >
     {children}
   </Container>
 );
 
-export const GridArea: React.FC<
-  ContainerProps & {
-    column: string;
-    row: string;
-  }
-> = ({ column, row, ...props }) => {
+export type GridAreaProps = ContainerProps & {
+  column?: string;
+  row?: string;
+  area?: string;
+};
+
+export const GridArea: React.FC<GridAreaProps> = ({
+  column,
+  row,
+  area,
+  ...props
+}) => {
   return (
-    <Container {...props} gridColumn={column} gridRow={row} display="grid" />
+    <Container {...props} gridArea={area} gridColumn={column} gridRow={row} />
   );
 };
