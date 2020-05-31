@@ -17,7 +17,9 @@ export const Card: React.FC<CardProps> = ({ header, children, ...props }) => (
     {...props}
     flexDirection="column"
   >
-    <Container justifyContent="flex-end">{header}</Container>
+    <Container justifyContent="flex-end">
+      {typeof header === 'string' ? <Heading>{header}</Heading> : header}
+    </Container>
     <Spacing dir="y" size={4} />
     <Container>{children}</Container>
   </GridArea>

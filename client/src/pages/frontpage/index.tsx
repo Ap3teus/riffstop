@@ -3,6 +3,7 @@ import { Grid, GridArea } from '../../common/components/Grid';
 import Card from '../../common/components/Card';
 import Container from '../../common/components/Container';
 import { theme } from '../../common/theme';
+import { Heading } from '../../common/components/Typography';
 
 const FrontPage: React.FC = () => (
   <Container width="100%" height="100%">
@@ -13,8 +14,12 @@ const FrontPage: React.FC = () => (
       rows={['1fr', '1fr']}
       areas={['songs account', 'songs -']}
     >
-      <Card area="songs">asd</Card>
-      <Card area="account">asd</Card>
+      <Card header="My Songs" area="songs">
+        asd
+      </Card>
+      <Card header="My Account" area="account">
+        asd
+      </Card>
     </Grid>
   </Container>
 );
