@@ -2,7 +2,6 @@ import { h } from 'preact';
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import FrontPage from './pages/frontpage';
 import styled, { createGlobalStyle } from 'styled-components';
-import Navigation from './pages/Navigation';
 
 const AppRouter = () => (
   <Router>
