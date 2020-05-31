@@ -4,6 +4,7 @@ import Card from '../../common/components/Card';
 import Container from '../../common/components/Container';
 import { theme } from '../../common/theme';
 import { Heading } from '../../common/components/Typography';
+import { Icon } from '../../common/components/Icon';
 
 const FrontPage: React.FC = () => (
   <Container width="100%" height="100%">
@@ -14,7 +15,15 @@ const FrontPage: React.FC = () => (
       rows={['1fr', '1fr']}
       areas={['songs account', 'songs -']}
     >
-      <Card header="My Songs" area="songs">
+      <Card
+        header={
+          <Heading>
+            <Icon type="music" />
+            My Songs
+          </Heading>
+        }
+        area="songs"
+      >
         asd
       </Card>
       <Card header="My Account" area="account">
