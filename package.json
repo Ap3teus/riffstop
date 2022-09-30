@@ -50,7 +50,7 @@
     "@types/styled-components": "^5.1.0",
     "@types/styled-system": "^5.1.9",
     "assets": "^3.0.1",
-    "d3-color": "^1.4.1",
+    "d3-color": "^3.1.0",
     "dotenv": "^8.2.0",
     "node-postgres": "^0.6.0",
     "pg-promise": "^10.5.6",
